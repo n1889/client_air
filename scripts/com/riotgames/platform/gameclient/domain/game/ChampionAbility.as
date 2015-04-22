@@ -1,0 +1,95 @@
+package com.riotgames.platform.gameclient.domain.game
+{
+   import flash.events.IEventDispatcher;
+   import flash.events.Event;
+   import mx.events.PropertyChangeEvent;
+   import flash.events.EventDispatcher;
+   
+   public class ChampionAbility extends Object implements IEventDispatcher
+   {
+      
+      private var _501509644iconSource:Object;
+      
+      private var _3373707name:String;
+      
+      private var _bindingEventDispatcher:EventDispatcher;
+      
+      private var _1724546052description:String;
+      
+      public function ChampionAbility()
+      {
+         this._bindingEventDispatcher = new EventDispatcher(IEventDispatcher(this));
+         super();
+      }
+      
+      public function dispatchEvent(param1:Event) : Boolean
+      {
+         return this._bindingEventDispatcher.dispatchEvent(param1);
+      }
+      
+      public function set iconSource(param1:Object) : void
+      {
+         var _loc2_:Object = this._501509644iconSource;
+         if(_loc2_ !== param1)
+         {
+            this._501509644iconSource = param1;
+            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"iconSource",_loc2_,param1));
+         }
+      }
+      
+      public function removeEventListener(param1:String, param2:Function, param3:Boolean = false) : void
+      {
+         this._bindingEventDispatcher.removeEventListener(param1,param2,param3);
+      }
+      
+      public function get name() : String
+      {
+         return this._3373707name;
+      }
+      
+      public function hasEventListener(param1:String) : Boolean
+      {
+         return this._bindingEventDispatcher.hasEventListener(param1);
+      }
+      
+      public function addEventListener(param1:String, param2:Function, param3:Boolean = false, param4:int = 0, param5:Boolean = false) : void
+      {
+         this._bindingEventDispatcher.addEventListener(param1,param2,param3,param4,param5);
+      }
+      
+      public function get iconSource() : Object
+      {
+         return this._501509644iconSource;
+      }
+      
+      public function willTrigger(param1:String) : Boolean
+      {
+         return this._bindingEventDispatcher.willTrigger(param1);
+      }
+      
+      public function set name(param1:String) : void
+      {
+         var _loc2_:Object = this._3373707name;
+         if(_loc2_ !== param1)
+         {
+            this._3373707name = param1;
+            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"name",_loc2_,param1));
+         }
+      }
+      
+      public function set description(param1:String) : void
+      {
+         var _loc2_:Object = this._1724546052description;
+         if(_loc2_ !== param1)
+         {
+            this._1724546052description = param1;
+            this.dispatchEvent(PropertyChangeEvent.createUpdateEvent(this,"description",_loc2_,param1));
+         }
+      }
+      
+      public function get description() : String
+      {
+         return this._1724546052description;
+      }
+   }
+}
